@@ -144,11 +144,76 @@ syntax:-
   statement.....
 }
 
-*/
+
 void main() {
   var list = ['amit', 10, 10.34];
 //untyped parameter ,item,the function ,invoked for each item in the list ,print a tring the values at the specific position
   list.forEach((item) {
     print('${list.indexOf(item)}: $item');
   });
+}
+*/
+// Dart classes
+
+// In a dart, Classes is a blue-print of objects.
+//Class is a wrapper that binds/encapulates the data and methods together
+
+// Declaring a class in dart
+//Syntax:
+/*
+class ClassName{
+   <function>
+   <constructors>
+   <fields>
+
+}
+class Flutter{
+  var stude_name;
+  var stude_marks;
+//method
+// it is a simple functions that prints the value of classfields
+showStudenInfo(){
+  print("name is  $stude_name");
+}
+}
+ //creating object in dart
+
+ In a dart ,Object of a class can be created using new keywords
+
+ var objectName = new ClassName(<constructor_argements>);
+
+ var stu = new Flutter();
+
+ //Instance Variable and Functions
+
+
+class Flutter1 {
+  var stud_name;
+  var stud_marks;
+  //method of class
+  showData() {
+    print('name is $stud_name');
+    print('marks is $stud_marks');
+  }
+}
+
+void main() {
+  var std = new Flutter1();
+  std.stud_name = 'adnam';
+  std.stud_marks = '86';
+  std.showData();
+}
+
+*/
+class P1 {
+  //constructor body
+  P1() {
+    print("This is second weak of flutter classses");
+  }
+}
+
+void main() {
+  // constructor call
+  P1 std = new P1();
+  print(std);
 }

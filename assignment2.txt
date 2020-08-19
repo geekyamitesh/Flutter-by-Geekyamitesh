@@ -1,0 +1,1 @@
+Q.1 Use of class and constructor make a program for hospital(include patients number,medicines,Diseses)
