@@ -36,7 +36,7 @@ class Hospital {
 }
 
 void patientDetails(Hospital obj){
-  Hospital patient=obj;
+  Hospital patient = obj;
     print("Enter patient ID:");
     patient.patientId = int.parse(stdin.readLineSync());
     print("Enter patient name:");
