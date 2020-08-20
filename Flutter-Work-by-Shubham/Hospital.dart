@@ -7,7 +7,7 @@ class Hospital {
 
 main() {
   var hospital = new Hospital();
-  hospital.patient_num = 123456;
+  hospital.patient_num = 01;
   hospital.medicine_name = 'Lisa';
   hospital.disease = 'Covid-19';
   print(hospital.patient_num);
