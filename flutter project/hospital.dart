@@ -2,6 +2,7 @@ class Hospital {
   var patient_num;
   var medicines_name;
   var diseses;
+  var patient_name;
 
   Hospital({this.patient_num, this.medicines_name, this.diseses});
 }
