@@ -65,6 +65,15 @@ RaisedButton.icon(
               )
 
  &
+ clip button in container
+ child: InkWell(
+          onTap: () {
+            setState(() {
+              sideLength == 50 ? sideLength = 100 : sideLength = 50;
+            });
+          },
+        ),
+      ),
 Icon
 a.Icon(
           Icons.access_alarms,
@@ -99,11 +108,24 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.blueGrey[700],
       ),
       //Task for tommorow(text style,background color)
-      body: Container(
-        color: Colors.grey[30],
-        child: Text("Hello Ravi!!"),
-        padding: EdgeInsets.fromLTRB(30, 50, 100, 70),
-        margin: EdgeInsets.all(55.0),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          Text("Flutter Team"),
+          FlatButton(
+            onPressed: () {
+              print("Hey team");
+            },
+            child: Text('text me'),
+            color: Colors.blue,
+          ),
+          Container(
+            color: Colors.amberAccent,
+            padding: EdgeInsets.all(30.0),
+            child: Text('inside spacing'),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
