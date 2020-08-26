@@ -1,5 +1,7 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
-//Date24/08/2020
+//home  Date24/08/2020 to 27/08
 // You have to make profile of your self
 // This is task for all of you [name,image,university name,icon(facbook,linkdin,instagram,mail,call)]
 //Today topic
@@ -87,28 +89,8 @@ a.Icon(
 5. Padding&Marging
     
 6. Rows
-*/
 
-/*
-Date 24 August
-Task 1: insertion font faimly from google font
-
-
-*/
-//runApp will to run the application in recent directory
-void main() => runApp(MaterialApp(home: Home()));
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('MyFamily'),
-        centerTitle: true, //tille will go center
-        backgroundColor: Colors.blueGrey[700],
-      ),
-      //Task for tommorow(text style,background color)
-      body: Row(
+Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
@@ -127,11 +109,130 @@ class Home extends StatelessWidget {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text('clcik'),
-        backgroundColor: Colors.blueGrey[700],
+
+// Column Row, expanded
+
+Expanded(
+            flex: 4,
+                      child: Container(
+              padding: EdgeInsets.fromLTRB(3.0, 3.0, 6.0, 6.0),
+              color: Colors.pinkAccent,
+              child: Text('Adnam'),
+            ),
+          ),
+          Padding(
+            
+            padding: const EdgeInsets.all(8.0),
+            child: Expanded(
+              flex: 5,
+                          child: Container( 
+                padding: EdgeInsets.fromLTRB(3.0, 3.0, 6.0, 6.0),
+                color: Colors.blue[600],
+                child: Text('Ravi'),
+              ),
+            ),
+          ),
+           Expanded(
+             flex: 1,
+                      child: Container(
+               padding: EdgeInsets.fromLTRB(3.0, 3.0, 6.0, 6.0),
+              color: Colors.grey[600],
+              child: Text('Anshuman'),
+            ),
+          ),
+
+//loop of Images In flutter
+
+Container(
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Expanded(child: Column(
+                  children: [
+                    Image.asset('assets/1.jpg'),
+                    Text('India')
+                  ],
+                )
+                ),
+                Expanded(child: Column(
+                  children: [
+                    Image.asset('assets/2.jpg'),
+                    Text('Bharat')
+                  ],
+                )
+                ),
+                
+              ],
+            )
+          ],
+        ),
       ),
+
+//Snackbar widget
+Snackbar widget is to  show a lightweight message at the bottom of creen .It can also conatin optional action.
+ Snackbar is usually used with Scafoold 
+
+*/
+
+/*
+Date 24 August
+Task 1: insertion font faimly from google font
+
+
+*/
+//runApp will to run the application in recent directory
+void main() => runApp(MaterialApp(home: Home()));
+// Stateful widget
+
+class Home extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _HomeState();
+
+    // It creates the mutable state for that widget at location in this process.
+  }
+}
+
+class _HomeState extends State<Home> {
+  @override
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+  void _showScaffold(String result) {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(result),
+    ));
+  }
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: _scaffoldKey,
+      appBar: AppBar(
+        title: Text('Snackbar tutorial'),
+        centerTitle: true,
+      ),
+      body: Center(
+          child: Column(
+        children: <Widget>[
+          RaisedButton(
+            textColor: Colors.white,
+            child: Text('Snackbar'),
+            color: Colors.black,
+            onPressed: () {
+              _showScaffold('this is a SnackBar');
+            },
+          ),
+          RaisedButton(
+            textColor: Colors.black,
+            child: Text('Snackbar 1'),
+            color: Colors.yellow,
+            onPressed: () {
+              _showScaffold('this is a SnackBar version 2');
+            },
+          )
+        ],
+      )),
     );
   }
 }
