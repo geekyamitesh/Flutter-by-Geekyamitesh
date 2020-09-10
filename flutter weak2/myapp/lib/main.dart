@@ -180,6 +180,53 @@ Snackbar widget is to  show a lightweight message at the bottom of creen .It can
 Date 24 August
 Task 1: insertion font faimly from google font
 
+// Switch widget :- Whenever swtich is toggled ,oN changed is called with new state pof switc
+
+//tooltip
+child:Tooltip(
+  message:'account',
+   child: FlatButton(
+     child: Icon(
+       Icons.account_box,
+       size:40,
+     )
+   )
+
+)
+
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: <Widget>[
+    Tooltip(
+      message: 'High quality',
+      child: IconButton(
+        icon: Icon(Icons.high_quality),
+        onPressed: () {
+          /** */
+        },
+      ),
+    ),
+    Tooltip(
+      message: 'Full screen',
+      child: IconButton(
+        icon: Icon(Icons.fullscreen),
+        onPressed: () {
+          /** */
+        },
+      ),
+    ),
+    Tooltip(
+      message: 'Filter',
+      child: IconButton(
+        icon: Icon(Icons.filter),
+        onPressed: () {
+          /** */
+        },
+      ),
+    )
+  ],
+)
+
 
 */
 //runApp will to run the application in recent directory
@@ -196,43 +243,26 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool isSwiched = false;
   @override
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
-  void _showScaffold(String result) {
-    _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text(result),
-    ));
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      appBar: AppBar(
-        title: Text('Snackbar tutorial'),
-        centerTitle: true,
-      ),
-      body: Center(
-          child: Column(
-        children: <Widget>[
-          RaisedButton(
-            textColor: Colors.white,
-            child: Text('Snackbar'),
-            color: Colors.black,
-            onPressed: () {
-              _showScaffold('this is a SnackBar');
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text('Switch'),
+        ),
+        body: Center(
+          child: Switch(
+            value: isSwiched,
+            onChanged: (value) {
+              setState(() {
+                isSwiched = value;
+                print(isSwiched);
+              });
             },
+            activeTrackColor: Colors.lightBlueAccent,
+            activeColor: Colors.deepOrangeAccent,
           ),
-          RaisedButton(
-            textColor: Colors.black,
-            child: Text('Snackbar 1'),
-            color: Colors.yellow,
-            onPressed: () {
-              _showScaffold('this is a SnackBar version 2');
-            },
-          )
-        ],
-      )),
-    );
+        ));
   }
 }

@@ -4,6 +4,8 @@ class ProfileCard extends StatelessWidget {
   final String text;
   final IconData icon;
   Function onPressed;
+
+  // Constructor call and define the value in second class.
   ProfileCard({@required this.icon, @required this.text, this.onPressed});
   @override
   Widget build(BuildContext context) {
