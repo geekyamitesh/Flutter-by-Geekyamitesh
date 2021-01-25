@@ -16,7 +16,7 @@ I have added practce file name practice.dart</br>
    
 
 ## Facing Any Problem or need any Help:grey_question:
-Write me in @[issues]((https://github.com/geekyamitesh) section. I will try solve your issue within 10-12 hours.
+Write me in @[issues](https://github.com/geekyamitesh) section. I will try solve your issue within 10-12 hours.
 
  
 
