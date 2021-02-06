@@ -1,4 +1,4 @@
-# Cal
+# Geeky Calculator made by [@geekyamitesh](https://github.com/geekyamitesh/Flutter-by-Geekyamitesh)
 
 A new Flutter project.
 
